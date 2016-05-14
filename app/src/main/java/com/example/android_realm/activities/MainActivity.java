@@ -55,7 +55,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerItemClick
     }
 
     private void loadData(){
-        noteListAdapter.setNoteList(retrieve());
+        if(retrieve() != null)
+            noteListAdapter.setNoteList(retrieve());
     }
 
     public RealmResults<Note> retrieve() {
@@ -67,5 +68,11 @@ public class MainActivity extends AppCompatActivity implements RecyclerItemClick
     @Override
     public void onItemClick(int position, View view) {
         SaveActivity.start(this, noteListAdapter.getItem(position).getId());
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }
