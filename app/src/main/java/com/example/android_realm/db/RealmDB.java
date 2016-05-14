@@ -11,7 +11,7 @@ import io.realm.RealmObject;
 import io.realm.RealmResults;
 
 /**
- * Created by docotel on 5/10/16.
+ * Created by wim on 5/10/16.
  */
 public class RealmDB {
 
@@ -20,21 +20,14 @@ public class RealmDB {
 
     public RealmDB(Context context) {
         this.context = context;
-        init(context);
+        realm = Realm.getInstance(context);
     }
 
-    private void init(Context context) {
+    public void setMigration(RealmMigration migration) {
         RealmConfiguration config = new RealmConfiguration.Builder(context)
+                .schemaVersion(0)
                 .name("example.realm")
-                .build();
-
-        realm = Realm.getInstance(config);
-    }
-
-    public void initWithDeleteIfMigrationNeeded() {
-        RealmConfiguration config = new RealmConfiguration.Builder(context)
-                .name("example.realm")
-                .deleteRealmIfMigrationNeeded()
+                .migration(migration)
                 .build();
 
         realm = Realm.getInstance(config);

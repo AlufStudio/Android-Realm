@@ -11,13 +11,10 @@ import com.example.android_realm.listener.RecyclerItemClickListener;
 import com.example.android_realm.model.Note;
 import com.example.android_realm.util.TimeUtil;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import io.realm.RealmResults;
 
 /**
- * Created by docotel on 5/14/16.
+ * Created by wim on 5/14/16.
  */
 public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>{
 
@@ -62,7 +59,7 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteVi
         final Note note = noteList.get(position);
 
         holder.note.setText(note.getNote().length() > 50 ? note.getNote().substring(0, 50) : note.getNote());
-        holder.date.setText(TimeUtil.unixToDateFormat(note.getDateModified()));
+        holder.date.setText(TimeUtil.unixToTimeAgo(note.getDateModified()));
     }
 
     @Override

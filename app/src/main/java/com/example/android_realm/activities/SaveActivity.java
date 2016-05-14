@@ -17,7 +17,7 @@ import com.example.android_realm.model.Note;
 import com.example.android_realm.util.TimeUtil;
 
 /**
- * Created by docotel on 5/14/16.
+ * Created by wim on 5/14/16.
  */
 public class SaveActivity extends AppCompatActivity {
 

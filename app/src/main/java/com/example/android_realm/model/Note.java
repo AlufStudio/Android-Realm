@@ -1,13 +1,10 @@
 package com.example.android_realm.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 /**
- * Created by docotel on 5/14/16.
+ * Created by wim on 5/14/16.
  */
 public class Note extends RealmObject{
 

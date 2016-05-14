@@ -5,7 +5,7 @@ import android.text.format.DateUtils;
 import java.util.Date;
 
 /**
- * Created by docotel on 5/14/16.
+ * Created by wim on 5/14/16.
  */
 public class TimeUtil {
 
@@ -13,7 +13,7 @@ public class TimeUtil {
         return new Date().getTime();
     }
 
-    public static String unixToDateFormat(String unix){
+    public static String unixToTimeAgo(String unix){
         CharSequence timeAgo = DateUtils.getRelativeTimeSpanString(
                 Long.parseLong(unix),
                 System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS);
